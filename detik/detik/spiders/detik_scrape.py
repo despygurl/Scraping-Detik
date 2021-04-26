@@ -3,8 +3,11 @@ import scrapy
 class PostsSpider(scrapy.Spider):
     name = "detik"
     allowed_urls = ['https://www.detik.com']
+    tanggal = input("Masukkan tanggal (dd): ")
+    bulan = input("Masukkan bulan (mm): ")
+    tahun = input("Masukkan tahun (yyyy): ")
     start_urls = [
-        'https://news.detik.com/indeks'
+        'https://news.detik.com/indeks?date={0}%2F{1}%2F{2}'.format(bulan, tanggal, tahun)
 
     ]
 
